@@ -1,0 +1,19 @@
+extends layout
+
+block nav
+  - var current = "content"
+block content
+  .container
+    h3.display-3 Inside the Demo Web Application:
+    p= message
+    p Here you can access our valuable content.
+    p For example, you can register new users: &nbsp;
+      button
+        a(href='register')
+          span.glyphicon.glyphicon-edit 
+          | &nbsp; Register
+    p Or you can 
+      button
+        a(href='signout')
+          span.glyphicon.glyphicon-log-out 
+          | &nbsp; Logout

@@ -1,0 +1,24 @@
+extends layout
+
+block content
+  .container
+    h3.display-3 Register New User
+    
+    form(method="POST",class="form-horizontal", action="register")
+      .form-group
+        label.control-label.col-sm-2 Full Name:
+        .col-sm-10
+          input(id="fullname",type="text",name="fullname",required,autofocus)
+      .form-group
+        label.control-label.col-sm-2 Username:
+        .col-sm-10
+          input(id="username",type="text",name="username",required)
+      .form-group
+        label.control-label.col-sm-2 Password:
+        .col-sm-10
+          input(id="password",type="text",name="password",required)
+      .form-group
+        .col-sm-offset-2.col-sm-10
+          button(type="submit") Register
+      p
+    p= message

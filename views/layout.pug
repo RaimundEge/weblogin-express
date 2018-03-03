@@ -1,0 +1,44 @@
+doctype html
+html
+  head
+    title= 'CSCI 680 - Web Application Frameworks'
+    link(rel='stylesheet', href='/stylesheets/style.css')
+    link(rel="stylesheet" href="//maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css")
+    script(src="//ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js")
+    script(src="//maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js")
+
+  body
+    block nav
+      - var current = "index"
+    div
+      .navbar.navbar-inverse.navbar-static-top
+        .container-fluid
+          .navbar-header
+            button(type="button",class="navbar-toggle",data-toggle="collapse",data-target=".nav-collapse")
+              span.icon-bar
+              span.icon-bar
+              span.icon-bar    
+            strong.navbar-brand.default Express Demo
+          .navbar-collapse.nav-collapse
+            ul.nav.navbar-nav
+              li(class=(current === "index"? "active" : undefined)): a(href="home") Home
+              li(class=(current === "content"? "active" : undefined)): a(href="content") Content
+            ul.nav.navbar-nav.navbar-right
+              if user == ""
+                li: a(href="signin") 
+                  span.glyphicon.glyphicon-log-in 
+                  | &nbsp; Sign in
+              else
+                li: p.navbar-text= user
+                li: a(href="signout")
+                  span.glyphicon.glyphicon-log-out 
+                  | &nbsp; Logout
+              
+    block content
+
+    div
+      .container.text-center
+        hr
+        a(href='https://expressjs.com',target="_blank") Developed with Express for Node.js
+        | &nbsp; &copy; 2018 CSCI 680 - Dr. Raimund K. Ege - NIU - CS
+

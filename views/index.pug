@@ -1,0 +1,18 @@
+extends layout
+
+block nav
+  - var current = "index"
+block content
+  .container
+    h3.display-3 Welcome to the Demo Web Application:
+    p= message
+    if user == ''
+      p To access our valuable content you need to &nbsp;
+        button
+          a(href='signin')
+            span.glyphicon.glyphicon-log-in 
+            | &nbsp; Sign in
+    else
+      p You can proceed to our valuable &nbsp;
+        a(href="content")
+          button content
